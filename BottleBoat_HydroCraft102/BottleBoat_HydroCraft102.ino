@@ -20,6 +20,7 @@ int pos = 0;
 
 void setup() {
   Serial.begin(9600);
+  Wire.begin();
   rudder.attach(5);
   pinMode(3,OUTPUT);
   analogWrite(3, 125);
@@ -27,7 +28,6 @@ void setup() {
 }
 
 void readCompass() {
-  Serial.print("Heading");
   
   msg.getHeading(&mx, &my, &mz);
 
